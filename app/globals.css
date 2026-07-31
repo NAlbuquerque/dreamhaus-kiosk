@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap');
+
+/* ─── Brand Tokens ─────────────────────────────────────────────────────────── */
+:root {
+  --dh-noir:    #0D0C0B;
+  --dh-onyx:    #111111;
+  --dh-surface: #1A1917;
+  --dh-cream:   #F5F0E6;
+  --dh-brass:   #B8976A;
+  --dh-linen:   #E8E0D0;
+  --dh-slate:   #8C8275;
+  --dh-border:  rgba(184, 151, 106, 0.18);
+
+  /* Seasonal palette accent colors */
+  --palette-autumn: #C19A6B;
+  --palette-winter: #7FA7C0;
+  --palette-spring: #E8BEB2;
+  --palette-summer: #A8B5AA;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+}
+
+/* ─── Kiosk Reset ─────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+  overflow: hidden;
+  background: var(--dh-noir);
+  color: var(--dh-cream);
+  font-family: var(--font-body);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Kiosk touch optimizations */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  /* cursor: none; — disabled for demo */
+}
+
+/* ─── Typography ──────────────────────────────────────────────────────────── */
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+/* ─── Animations ──────────────────────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes bubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes swatchReveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes countdownPulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40%           { transform: translateY(-6px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes micPulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes flashFade {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}

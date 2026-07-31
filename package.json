@@ -1,0 +1,39 @@
+{
+  "name": "dreamhaus-kiosk",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "sync-catalog": "node --env-file=.env --experimental-strip-types scripts/sync-catalog.ts"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "latest",
+    "@types/qrcode": "latest",
+    "ai": "latest",
+    "eve": "latest",
+    "next": "latest",
+    "qrcode": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "microsandbox": "^0.6.8",
+    "typescript": "latest"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
+  }
+}
